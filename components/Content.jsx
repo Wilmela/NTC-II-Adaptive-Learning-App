@@ -1,5 +1,6 @@
 import { View, Text, Image, useWindowDimensions } from "react-native";
 import { COLORS, FONTS, SIZES } from "../constants";
+import {ZoomableImage} from 'react-native-zoomable-image'
 
 const HeadText = ({ children }) => (
   <Text
@@ -45,7 +46,7 @@ const LessonImage = ({ imgUrl }) => {
   const { height, width } = useWindowDimensions();
   return (
     <View>
-      <Image
+      <ZoomableImage
         source={imgUrl}
         resizeMode="contain"
         style={{
