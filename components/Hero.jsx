@@ -5,7 +5,9 @@ import {
   ImageBackground,
   StyleSheet,
   Vibration,
+  useWindowDimensions,
 } from "react-native";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 import AppButton from "../components/AppButton";
 import { COLORS, FONTS, SIZES } from "../constants";
@@ -15,10 +17,13 @@ import FocusedStatusBar from "../components/FocusedStatusBar";
 
 const Hero = () => {
   const { navigate } = useNavigation();
+  const { weight } = useWindowDimensions();
+
+  const fontToPer = (n) => toFixed(weight * n);
 
   return (
     <>
-      <FocusedStatusBar barStyle='light-content' />
+      <FocusedStatusBar barStyle="light-content" />
 
       <View style={{ flex: 1 }}>
         <ImageBackground
@@ -30,9 +35,11 @@ const Hero = () => {
           <Text style={styles.title}>
             NTC-II ELECTRICAL INSTALLATION WORKS ADAPTIVE LEARNING APP.
           </Text>
-          <Text style={styles.instructor}>
-            Instructor - Onuotu, Lionel Young
-          </Text>
+          <View style={styles.instructorWrapper}>
+            <Text style={styles.instructor}>
+              Instructor - Onuotu, Lionel Young
+            </Text>
+          </View>
           <View style={styles.contact}>
             <Ionicons
               name="md-phone-portrait-outline"
@@ -99,7 +106,7 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontFamily: FONTS.bold,
-    fontSize: SIZES.extraLarge + 20,
+    fontSize: RFPercentage(6),
     color: COLORS.white,
     position: "absolute",
     top: "25%",
@@ -107,30 +114,32 @@ const styles = StyleSheet.create({
   title: {
     color: "#ccc",
     fontFamily: FONTS.bold,
-    fontSize: SIZES.extraLarge - 3,
+    fontSize: RFPercentage(2.7),
 
     position: "absolute",
     top: "43%",
     lineHeight: 40,
     textAlign: "center",
   },
-  instructor: {
-    width: "100%",
+  instructorWrapper: {
+    width: "70%",
     position: "absolute",
-    top: "56%",
-    left: "31%",
-
+    bottom: "40.5%",
+    right: 0,
+  },
+  instructor: {
     color: COLORS.white,
     fontFamily: FONTS.light,
     fontSize: SIZES.large - 2,
   },
   contact: {
-    width: "40%",
+    width: "41%",
     flexDirection: "row",
     justifyContent: "space-evenly",
     position: "absolute",
-    top: "60%",
+    bottom: "36%",
     right: 0,
   },
 });
 export default Hero;
+//eas build -p android --profile preview
