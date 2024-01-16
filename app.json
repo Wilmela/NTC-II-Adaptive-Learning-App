@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "NTC-II-Adaptive-Learning-App",
+    "slug": "NTC-II-Adaptive-Learning-App",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/addc8099-5638-4611-910b-36e5e162464b"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.creativemela.ntc-ii-adaptive-learning-app",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.creativemela.ntc_ii_adaptive_earning_app",
+      "versionCode": 1
+    },
+    "extra": {
+      
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
+  }
+}
